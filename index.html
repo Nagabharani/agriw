@@ -833,13 +833,23 @@ function renderReviewSnapshot(){
   snap.innerHTML = `<div style="display:flex;gap:12px;align-items:center"><div style="font-weight:900;font-size:1.2rem">${avgRounded}/5</div><div class="muted small">${total} verified reviews</div></div><div style="margin-top:6px" class="stars">${stars}</div>`;
 }
 
+
 /* Farmer carousel */
 function renderFarmerCarousel(){
   const el = document.getElementById('farmersCarousel');
   el.innerHTML = '';
   FARMER_STORIES.forEach(f=>{
-    const tile = document.createElement('div'); tile.className='farmer-tile';
-    tile.innerHTML = `<img src="${f.img}" style="width:72px;height:72px;border-radius:8px;object-fit:cover"><div style="flex:1"><div style="font-weight:800">${f.name}</div><div class="muted small">Region ${f.region} • ${f.organic ? 'Organic' : 'Family farm'}</div><div class="muted small" style="margin-top:6px">${f.story.slice(0,90)}...</div><div style="margin-top:8px"><button class="btn ghost" onclick="openFarmerProfile(${f.id})">Read</button></div></div>`;
+    const tile = document.createElement('div'); 
+    tile.className='farmer-tile';
+    tile.innerHTML = `
+      <div style="flex:1">
+        <div style="font-weight:800">${f.name}</div>
+        <div class="muted small">Region ${f.region} • ${f.organic ? 'Organic' : 'Family farm'}</div>
+        <div class="muted small" style="margin-top:6px">${f.story.slice(0,90)}...</div>
+        <div style="margin-top:8px">
+          <button class="btn ghost" onclick="openFarmerProfile(${f.id})">Read</button>
+        </div>
+      </div>`;
     el.appendChild(tile);
   });
 }
