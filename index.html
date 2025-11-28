@@ -118,7 +118,7 @@
     <div>
       <div style="display:flex;gap:10px;align-items:center"><div class="badge">Farm-fresh • Local • Ethical</div></div>
       <h1>Fresh organic produce — direct from verified farms</h1>
-      <p class="muted">Sourced from <strong id="farmersCount">120+</strong> verified farmers • Delivered in <strong>24–48 hours</strong>. Full batch traceability and transparent farmer pay.</p>
+      <p class="muted">Sourced from <strong id="farmersCount">50+</strong> verified farmers • Delivered in <strong>24–48 hours</strong>. Full batch traceability and transparent farmer pay.</p>
 
       <div class="cta-row">
         <button class="btn primary" onclick="scrollToSection('shop')">Shop Fresh</button>
@@ -136,12 +136,13 @@
           <div style="font-weight:800">Farmer share: 65%</div>
         </div>
       </div>
+      <!-- ntg -->
 
       <!-- Experience / Stats (style C: light green organic cards) -->
       <div class="stats-row" aria-hidden="false" style="margin-top:16px">
        
         <div class="stat-card">
-          <div style="font-size:1.05rem;font-weight:800;color:var(--accent-contrast)">500+ Farmers</div>
+          <div style="font-size:1.05rem;font-weight:800;color:var(--accent-contrast)">200+ farmers coming soon </div>
           <div class="muted small">Partnered small & mid-scale growers</div>
         </div>
         <div class="stat-card">
@@ -500,7 +501,7 @@ function saveAll(){
 /* ==============
    PRODUCTS & FARMERS (40 items included)
    ============== */
-const FARMER_NAMES = ["Ravi Kumar","Sita Devi","Arjun Patel","Meera Nair","Sunil Rao","Radha Sharma","Vikram Singh","Anita Joshi","Ramesh Yadav","Priya Desai","Karan Mehta","Geeta Iyer","Sanjay Pillai","Leela Gupta","Asha Reddy","Mohit Verma","Tara Khatri","Ajay Chauhan","Nisha Kapoor","Deepak Roy","Kala Bhattacharjee"];
+const FARMER_NAMES = ["Ravi Kumar","Sita Devi","Arjun Patel","Meera Nair","Sunil Rao","Radha Sharma","Vikram Singh","Anita Joshi","Ramesh Yadav","Priya Desai","Karan Mehta","Geeta Iyer","Sanjay Pillai","Leela Gupta","brahmanandam","Mohit Verma","Tara Khatri","Ajay Chauhan","Nisha Kapoor","Deepak Roy","Kala Bhattacharjee"];
 function pickFarmer(i){ return FARMER_NAMES[(i * 11 + 3) % FARMER_NAMES.length]; }
 
 /* Full products list (40 items) */
@@ -519,7 +520,7 @@ const PRODUCTS = [
   { id:1012, code:'cauli', name:'Cauliflower (1pc)', price:50, img:'images/myitems/cauliflower.jpg', harvest:'2025-11-16', batch:'C-712', farmerIndex:12 },
   { id:1013, code:'broccoli', name:'Broccoli (1pc)', price:60, img:'images/myitems/broccoli.jpg', harvest:'2025-11-14', batch:'B-813', farmerIndex:13 },
   { id:1014, code:'cabbage', name:'Cabbage (1pc)', price:30, img:'images/myitems/cabbage.jpg', harvest:'2025-11-15', batch:'C-914', farmerIndex:14 },
-  { id:1015, code:'eggplant', name:'Eggplant (500g)', price:35, img:'images/myitems/eggplant.jpg', harvest:'2025-11-12', batch:'E-115', farmerIndex:15 },
+  { id:1015, code:'eggplant', name:'Eggplant (500g)', price:35, img:'images/myitems/Eggplant.jpg', harvest:'2025-11-12', batch:'E-115', farmerIndex:15 },
   { id:1016, code:'milk', name:'A Milk (1L)', price:65, img:'images/myitems/A Milk.jpg', harvest:'2025-11-18', batch:'D-116', farmerIndex:16 },
   { id:1017, code:'curd', name:'Curd (500g)', price:45, img:'images/myitems/curd.jpg', harvest:'2025-11-18', batch:'D-217', farmerIndex:17 },
   { id:1018, code:'paneer', name:'Paneer (200g)', price:95, img:'images/myitems/paneer.jpg', harvest:'2025-11-17', batch:'D-318', farmerIndex:18 },
