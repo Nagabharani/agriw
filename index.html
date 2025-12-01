@@ -123,13 +123,13 @@
       <div class="cta-row">
         <button class="btn primary" onclick="scrollToSection('shop')">Shop Fresh</button>
         <button class="btn ghost" onclick="openBundleBuilder()">Build a subscription</button>
-        <div style="margin-left:auto" class="muted small">Free delivery on first 2 subscriptions</div>
+        <div style="margin-left:auto" class="muted small"></div>
       </div>
 
       <div style="margin-top:14px;display:flex;gap:12px;flex-wrap:wrap">
         <div style="min-width:160px;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--line)">
           <div class="muted small">Next delivery (subs)</div>
-          <div style="font-weight:800" id="nextDelivery">Wed, Nov 26</div>
+          <div style="font-weight:800" id="nextDelivery">Wed, Dec 3</div>
         </div>
         <div style="min-width:160px;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--line)">
           <div class="muted small">Transparency</div>
@@ -145,10 +145,7 @@
           <div style="font-size:1.05rem;font-weight:800;color:var(--accent-contrast)">200+ farmers coming soon </div>
           <div class="muted small">Partnered small & mid-scale growers</div>
         </div>
-        <div class="stat-card">
-          <div style="font-size:1.05rem;font-weight:800;color:var(--accent-contrast)">98% Satisfaction</div>
-          <div class="muted small">Customer satisfaction (based on verified reviews)</div>
-        </div>
+        
         
       </div>
 
@@ -226,7 +223,7 @@
         <div style="font-weight:800">Verified Reviews</div>
         <div class="muted small" style="margin-top:8px">Only verified purchases can post reviews — photos welcome.</div>
         <div style="margin-top:12px" id="reviewSnapshot"></div>
-        <div style="margin-top:8px"><button class="btn ghost" onclick="openReviews()">See reviews</button></div>
+        <div style="margin-top:8px"><button class="btn ghost" onclick="#">See reviews</button></div>
       </div>
 
       <div style="flex:1;min-width:220px;padding:12px;border-radius:12px;background:var(--card);border:1px solid var(--line)">
@@ -553,19 +550,6 @@ PRODUCTS.forEach((p, idx) => { p.farmer = pickFarmer(p.farmerIndex || (idx+1)); 
    Reviews: ensure at least 120 reviews, average 4.9
    We'll generate 120 reviews: 108 five-star, 12 four-star -> avg 4.9
    ============== */
-const SAMPLE_MESSAGES = [
-  'Fresh produce and quick delivery! My family loved it.',
-  'Amazing transparency — loved the farmer story and the batch trace.',
-  'Subscription saved us time and money. Vegetables are very fresh.',
-  'Excellent packaging — everything arrived intact and crisp.',
-  'Clean, fresh and tasty. Very happy with AgriWeave.',
-  'Great quality fruits; apples were crisp and sweet.',
-  'Consistent quality week after week. Highly recommended!',
-  'Good price for the quality. Will order again.',
-  'Very happy with the delivery and freshness.',
-  'Excellent service — customer support was helpful.'
-];
-const SAMPLE_NAMES = ['Anjali R.','Rohit K.','Priya S.','Michael T.','Sana B.','Amit P.','Rekha M.','Sunil V.','Neha G.','Karan L.','Meera N.','Aditya S.','Ritu C.','Vikram J.','Pooja D.','Rahul T.','Suresh Y.','Ishita B.','Naveen R.','Tara P.','Kunal M.','Swati L.','Deepa K.','Hitesh R.','Gita S.','Farida A.','Rakesh N.','Divya P.','Sameer Q.','Bina S.'];
 
 function randomDateWithinPastYear(){
   const now = new Date();
@@ -831,7 +815,6 @@ function renderReviewSnapshot(){
   const avg = total ? (state.reviews.reduce((s,r)=>s+r.rating,0)/total) : 0;
   const avgRounded = avg ? (Math.round(avg*10)/10).toFixed(1) : '0.0';
   const stars = '★'.repeat(Math.round(avg)) + '☆'.repeat(5 - Math.round(avg));
-  snap.innerHTML = `<div style="display:flex;gap:12px;align-items:center"><div style="font-weight:900;font-size:1.2rem">${avgRounded}/5</div><div class="muted small">${total} verified reviews</div></div><div style="margin-top:6px" class="stars">${stars}</div>`;
 }
 
 
